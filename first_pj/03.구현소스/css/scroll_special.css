@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* 스페셜섹션 위치조정 */
+
+
+
+
+
+/* 스크롤액션박스 */
+.scrollspebox {
+  position: absolute;
+  /* top: 20vh; */
+  /* right: 100px; */
+  width: 23vw;
+  /* border: 1px solid #000; */
+  /* background-color: lightblue; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.scrollspebox img{
+  width: 100%;
+}
+
+/* 스크롤등장박스1 */
+.speimg1 {
+  top: 20vh;
+  right: 12vw;
+}
+
+/* 스크롤등장박스2 */
+.speimg2 {
+  top: 35vh;
+  right: 44vw;
+}
+/* 스크롤등장박스3 */
+.speimg3 {
+  top: 91vh;
+  right: 16vw;
+}
+.speimg4 {
+  top: 103vh;
+  right: 48vw;
+
+}
+.speimg5 {
+  top: 143vh;
+    right: 12vw;
+}
+.speimg6 {
+  top: 176vh;
+    right: 43vw;
+}
+.speimg7 {
+  top: 227vh;
+  right: 15vw;
+}
+
+/* 스크롤 등장 초기화 클래스1 */
+.spestyle{
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 1.2s ease-in-out;
+}
+.spestyle img{
+  transition: 1.2s ease-in-out;
+  border-radius: 50%;
+}
+/* 스크롤 등장 클래스 .on */
+.spestyle.on{
+  transform: translateY(0);
+  opacity: 1;
+  border-radius: 0%;
+  
+}
+.spestyle.on img{
+  border-radius: 0%;  
+}
+
+
+
+
+
+
+/* ???????????마우스 오버시 색깔 바뀌게 하는거 실패??????????????????????????????? */
+.scrollspebox{
+  /* overflow: hi dden; */
+
+}
+/* .scrollspebox img{
+  overflow: hidden;
+} */
+
+.scrollspebox:hover::before, .scrollspebox:hover::after{
+  
+  cursor: pointer;
+}
+
+.scrollspebox::before{
+
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: #c45f004f;
+  transition: .3s ease-in-out;
+  mask-image: linear-gradient(to bottom, #000000 80%, transparent 99%);
+  opacity: 0;
+}
+.scrollspebox:hover::before{
+  opacity: 1;
+}
+.scrollspebox::after{
+  content: 'Click more';
+  color: #fff;
+  font-size: 50px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  z-index: 1;
+  /* background-color: #c45f00a9; */
+  
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+.scrollspebox:hover::after{
+  
+  opacity: 1;
+}
+  
+ /* ??????????????????????????????????? */ 
+
+
+
+
+/* 스크롤 등장 초기화 클래스2 */
+/* .set-it2{
+  transform: rotate(360deg);
+  opacity: 0;
+  transition: 1.2s ease-in-out;
+} */
+/* 스크롤 등장 클래스2 .on */
+/* .set-it2.on{
+  transform: rotate(0deg);
+  opacity: 1;
+} */
+
+/* 스크롤 등장 초기화 클래스3 */
+/* .set-it3{
+  transform: translate(-100%,-100%) scale(0);
+  transition: 1.2s ease-in-out;
+} */
+/* 스크롤 등장 클래스2 .on */
+/* .set-it3.on{
+  transform: translate(0,0) scale(1);
+} */
+
+
+
+
+/********************************** 이미지 주위 텍스트들 **********************************/
+/* 이미지 오른쪽 텍스트 */
+.spertxt{
+  position: absolute;
+  writing-mode: vertical-lr;
+  white-space: nowrap;
+  top: 0;
+  right: -1.5em;
+  font-size: 3em;
+  font-family: "Noto Serif KR", serif;
+  font-weight: bold;
+}
+/* 이미지 아랫쪽 텍스트 */
+.speltxt{
+  font-size: 1.5em;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+
+
+
+

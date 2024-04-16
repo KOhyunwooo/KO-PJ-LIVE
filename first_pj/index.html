@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>만드는중~TAP KOREA</title>
+    <link rel="stylesheet" href="03.구현소스/css/main.css" />
+    <!-- JS:모듈로 불러오기 -->
+    <script type="module" src="./03.구현소스/js/main.js"></script>
+    <!-- 구글 아이콘 사용 -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- 폰트 어썸 아이콘 사용 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <script>
+      /***********************************************JS 함수 짧게 만들기****************************************************/
+      // querySelector 함수 짧게 만들기! ////
+      const qs = (x) => document.querySelector(x);
+      const qsa = (x) => document.querySelectorAll(x);
+      const qsEl = (ele, x) => ele.querySelector(x);
+      const qsaEl = (ele, x) => ele.querySelectorAll(x);
+
+      // addEventListener 함수 짧게 만들기! ////
+      const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
+      /**********************************************************  **********************************************************/
+
+      addEvt(window, "load", loadFn);
+      function loadFn() {
+        const topArea = qs("#top-area");
+        const gnb = qs(".gnb");
+
+        addEvt(window,'scroll',()=>{
+          let scTop = window.scrollY;
+          console.log(scTop);
+          if(scTop>50){
+            topArea.classList.add('slim');
+          }
+          else{
+            topArea.classList.remove('slim');
+
+          }
+        });
+
+        gnb.onmouseenter = () => {
+          topArea.classList.add("on");
+        };
+
+        topArea.onmouseleave = () => {
+          topArea.classList.remove("on");
+        };
+      }
+    </script>
+  </head>
+  <body class="scbar">
+    <!----------------------------------------------------- 1.상단영역(메뉴) ----------------------------------------------------->
+    <div id="top-area">
+      <header class="top-area inbox">
+        <!-- <h2 class="temp-tit">1.상단영역(메뉴)</h2> -->
+        <div class="cont-box topbox">
+          <div class="col-2">
+            <!-- 로고 -->
+            <h1 class="logo">
+              <a href="#">
+                <img src="01.자료수집/PJ1_images/logo.svg" alt="메인 로고" />
+              </a>
+            </h1>
+          </div>
+          <div class="col-8">
+            <nav class="gnb uline">
+              <!-- (1)product메뉴 dl -->
+              <dl>
+                <!-- 상위메뉴 dt -->
+                <dt>
+                  <a href="#">PRODUCT</a>
+                </dt>
+              </dl>
+              <!-- (2)tap special메뉴 dl -->
+              <dl>
+                <!-- 상위메뉴 dt -->
+                <dt>
+                  <a href="#">TAP SPECIAL</a>
+                </dt>
+              </dl>
+              <!-- (3)SUSTAINABILITY메뉴 dl -->
+              <dl>
+                <!-- 상위메뉴 dt -->
+                <dt>
+                  <a href="#">SUSTAINABILITY</a>
+                </dt>
+                <dd>
+                  <a href="#">특허 및 인증</a>
+                </dd>
+                <dd>
+                  <a href="#">원스톱 시스템</a>
+                </dd>
+                <dd>
+                  <a href="#">지속가능경영보고</a>
+                </dd>
+              </dl>
+              <!-- (4)COMPANY메뉴 dl -->
+              <dl>
+                <!-- 상위메뉴 dt -->
+                <dt>
+                  <a href="#">COMPANY</a>
+                </dt>
+                <dd>
+                  <a href="#">회사 소개</a>
+                </dd>
+                <dd>
+                  <a href="#">쇼룸</a>
+                </dd>
+                <dd>
+                  <a href="#">연혁</a>
+                </dd>
+                <dd>
+                  <a href="#">파트너사</a>
+                </dd>
+                <dd>
+                  <a href="#">인재채용</a>
+                </dd>
+              </dl>
+              <!-- (5)COMUNITY메뉴 dl -->
+              <dl>
+                <!-- 상위메뉴 dt -->
+                <dt>
+                  <a href="#">COMUNITY</a>
+                </dt>
+                <dd>
+                  <a href="#">새소식</a>
+                </dd>
+                <dd>
+                  <a href="#">카탈로그</a>
+                </dd>
+                <dd>
+                  <a href="#">샘플신청</a>
+                </dd>
+                <dd>
+                  <a href="#">1:1문의</a>
+                </dd>
+              </dl>
+            </nav>
+          </div>
+          <div class="col-2">
+            <ul class="smenu suline">
+              <li>
+                <a href="#">
+                  쇼룸
+                  <span class="material-symbols-outlined"> deployed_code </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  샘플카트
+                  <span class="material-symbols-outlined"> shopping_cart </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  KOR
+                  <span class="material-symbols-outlined"> language </span>
+                </a>
+                <ol class="ssmenu">
+                  <li>
+                    <a href="#">ENG</a>
+                  </li>
+                  <li>
+                    <a href="#">JPN</a>
+                  </li>
+                </ol>
+              </li>
+              <!-- .smenu 언어버튼 하위메뉴(클릭시 KOR이 다른글자로 바뀌게)  -->
+              <li>
+                <a href="#">
+                  <span class="material-symbols-outlined"> share </span>
+                </a>
+                <ol class="ssmenu">
+                  <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-comment"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-message"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-solid fa-clone"></i></a>
+                  </li>
+                </ol>
+              </li>
+              <!-- .smenu 공유버튼 하위메뉴 -->
+            </ul>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-------------------------------------------------------- 2.배너 섹션 -------------------------------------------------------->
+    <div id="ban-sect">
+      <section class="ban-sect inbox">
+        <!-- <h2 class="temp-tit">2.배너 섹션</h2> -->
+        <div class="cont-box">
+          <div class="col-12 overflowhidden">
+            <div class="mtxt style3"></div>
+
+            <div class="scroll-ani"></div>
+            <div class="scroll-ani2"></div>
+
+            <div class="scroll-text">
+              <span>scroll</span>
+            </div>
+
+            <img src="./" alt="" />
+            <video muted autoplay loop>
+              <source
+                src="01.자료수집/동영상 파일/main_video04.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- 3.비쥬얼 섹션 -->
+    <div id="visual-sect">
+      <section class="visual-sect inbox">
+        <!-- <h2 class="temp-tit">3.비쥬얼 섹션</h2> -->
+        <div class="cont-box">
+          <!-- 3-1 좌측 텍스트+viw more 부분 -->
+          <div class="col-5 visect-left">
+            <aside class="ban-tit">
+              <div class="visect-textbox on">
+                <p class="desc">Global Market Leader</p>
+                <p class="tit">TAP KOREA</p>
+                <p class="cont">편리한 제품의 사용, 친환경적인 패키징 등<br>
+                  탭코리아만의 다양하고 특별한 제품을 확인해보세요</p>
+              </div>
+              <div class="visect-textbox">
+                <p class="desc">NEW PRODUCT</p>
+                <p class="tit">Slim Magnetic Cushion</p>
+                <p class="cont">버튼리스 타입으로 슬림하고 깔끔한 쉐입<br>
+                  링필라이너 기술을 접목한 마그네틱 쿠션</p>
+              </div>
+              <div class="visect-textbox">
+                <p class="desc">NEW PRODUCT</p>
+                <p class="tit">Airless Refill Bottle</p>
+                <p class="cont">지속 가능한 패키징의 친환경 에어리스 용기<br>리필 교체가 가능한 용기 구성</p>
+              </div>
+              <div class="visect-textbox">
+                <p class="desc">NEW PRODUCT</p>
+                <p class="tit">Nude Magnetic Cushion</p>
+                <p class="cont">이중 용기로 다양한 디자인 연출 가능<br>링필라이너 기술을 접목한 마그네틱 쿠션 </p>
+              </div>
+              <div class="visect-textbox">
+                <p class="desc">Global Market Leader</p>
+                <p class="tit">TAP KOREA</p>
+                <p class="cont">편리한 제품의 사용, 친환경적인 패키징 등<br>탭코리아만의 다양하고 특별한 제품을 확인해보세요</p>
+              </div>
+            </aside>
+
+            <div class="indic"></div>
+            <div class="btngrp">
+              <a href="#" class="abtn ab1">
+                <img src="./03.구현소스/images/left_btn.png" alt="왼쪽버튼" />
+              </a>
+              <a href="#" class="abtn ab2">
+                <img
+                  src="./03.구현소스/images/right_btn.png"
+                  alt="오른쪽버튼"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- 3-2. 우측 이미지+영상 오파시티 트랜지션 부분 -->
+          <div class="col-7 visect-right">
+            <ul>
+              <li class="on">
+                <img
+                  src="01.자료수집/PJ1_images/visual_sect01.jpg"
+                  alt="비쥬얼섹션01"
+                />
+              </li>
+              <li>
+                <img
+                  src="01.자료수집/PJ1_images/visual_sect02.jpg"
+                  alt="비쥬얼섹션02"
+                />
+              </li>
+              <li>
+                <img
+                  src="01.자료수집/PJ1_images/visual_sect03.jpg"
+                  alt="비쥬얼섹션03"
+                />
+              </li>
+              <li>
+                <img
+                  src="01.자료수집/PJ1_images/visual_sect04.jpg"
+                  alt="비쥬얼섹션04"
+                />
+              </li>
+              <li>
+                <video muted autoplay loop>
+                  <source
+                    src="01.자료수집/동영상 파일/file_1702129813_0.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+    </div>
+    <!--*************************************** 4.프로섹션 섹션 ***************************************-->
+    <div id="pro-sect">
+      <section class="pro-sect inbox">
+        <!-- <h2 class="temp-tit">4.프로섹션 섹션:grid가 제대로 되지 않음</h2> -->
+        <div class="cont-box ">
+          <div class="col-6 pleft-box">
+            <p class="tit">SKIN CARE</p>
+            <div class="txt">편리한 사용, 제품보존의 기술, 고품질 용기<br>탭코리아의 다양한 스킨케어 제품을 확인해보세요.
+            </div>
+            <div class="proleft">
+              <a href="#">Airless Bottle <br><br><br>→</a>
+              <a href="#">Dip-tube <br>Dropper Bottle<br><br>→</a>
+              <a href="#">Blow Bottle<br><br><br>→</a>
+              <a href="#">Dispenser<br>Dropper<br><br>→</a>
+              <a href="#">Cream Jar<br><br><br>→</a>
+              <a href="#">Tube<br><br><br>→</a>
+              <a href="#">Cushion<br>Compact<br>Powder<br>→</a>
+              <a href="#">Point Make-up<br><br><br>→</a>
+              <a href="#">Dual Chamber<br><br><br>→</a>
+              <a href="#">Others<br><br><br>→</a>
+            </div> 
+          </div>
+          <div class="col-6 proright">
+            <a href="#"><img src="./01.자료수집/PJ1_images/product01.jpg" alt="첫번쨰 이미지만 할꺼야"></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--***************************************** 5.저니 섹션 *****************************************-->
+    <div id="journey-sect">
+      <section class="journey-sect inbox">
+        <!-- <h2 class="temp-tit">5.저니 섹션: 빠져나갈때 배경색 흰색으로 바뀌게</h2> -->
+        <div class="cont-box">
+          <div class="col-12">
+            <div class="jtxt jtxt-style"></div>
+            <!-- 저니섹션 페이지 메인 박스 -->
+            <div class="jourcont">
+              <div class="journeymain"></div>
+              <div class="journeymain-txt">
+                <p class="tit jourtit jourtitstyle"></p>
+                <p class="desc jourdesc">지속가능한 미래를 위한 준비, 그리고 도전<br>
+                   지금까지의 탭코리아를 성장시켜온 원동력이자 더 나은 미래로 나아가는 경쟁력입니다.
+                </p>
+              </div>
+            </div>
+            <div class="cpointer">
+              <p>View More <br />Click!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- *******************************************6.스페셜섹션 섹션******************************************* -->
+    <div id="special-sect">
+      <section class="special-sect inbox">
+        <!-- <h2 class="temp-tit">6.스페셜섹션 섹션: 오버플로우 히든을 주면 보더레디우스는 줄수있지만, 글자를 밖에다 못쓰고, 오버플로우 히든을 안주면 보더레이우스를 못줘요
+          해답: 
+        </h2> -->
+        <div class="cont-box">
+          <div class="col-12">
+            <div class="txtspecial">
+              <p class="tit">TAP SPECIAL</p>
+              <p class="txt">끊임없는 연구의 결과, 탭스페셜을 만나보세요.</p>
+            </div>
+
+            <div class="scrollspebox speimg1 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special01.jpg" alt="special01">
+              <p class="spertxt">Pump technology</p>
+              <p class="speltxt">탭코리아의 독보적인 펌프 기술력</p>
+            </div>
+            <div class="scrollspebox speimg2 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special02.jpg" alt="special02">
+              <p class="spertxt">Airless pouch</p>
+              <p class="speltxt">비대칭형 용기의 에어리스화</p>
+            </div>
+            <div class="scrollspebox speimg3 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special03.jpg" alt="special03">
+              <p class="spertxt">Dual mix</p>
+              <p class="speltxt">성분의 손상없이 한 용기 안에 두 제품을 품다</p>
+            </div>
+            <div class="scrollspebox speimg4 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special04.jpg" alt="special04">
+              <p class="spertxt">Cushion & Compact</p>
+              <p class="speltxt">Ring peel liner & Airless compact</p>
+            </div>
+            <div class="scrollspebox speimg5 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special05.jpg" alt="special05">
+              <p class="spertxt">Blow technology</p>
+              <p class="speltxt">다양한 브로우 제품 생산 설비</p>
+            </div>
+            <div class="scrollspebox speimg6 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special06.jpg" alt="special06">
+              <p class="spertxt">Air foaming blow bottle</p>
+              <p class="speltxt">버블포켓과 포밍필터로 만드는 부드러운 거품</p>
+            </div>
+            <div class="scrollspebox speimg7 spestyle txtmother">
+              <img src="./01.자료수집/PJ1_images/special07.jpg" alt="special07">
+              <p class="spertxt">Eco friendly</p>
+              <p class="speltxt">지속 가능한 패키징 솔루션</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- 7.무브텍스트 섹션 -->
+    <div id="bantext-sect">
+      <section class="bantext-sect inbox">
+        <h2 class="temp-tit"></h2>
+        <div class="cont-box fortxtslide">
+          <div class="col-12">
+            <div class="move_text_box">
+              <div class="text">
+                  <p>SKIN CARE &amp; MAKE UP PACKAGING</p>
+                  <p>SKIN CARE &amp; MAKE UP PACKAGING</p>
+              </div>
+          </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- 8.파트너 섹션 -->
+    <!-- <div id="partner-sect">
+      <section class="partner-sect inbox">
+        <h2 class="temp-tit">8.파트너 섹션</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+          <div class="col-12"></div>
+        </div>
+      </section>
+    </div> -->
+    <!-- 9.뉴스 섹션 -->
+    <div id="news-sect">
+      <section class="news-sect inbox">
+        <!-- <h2 class="temp-tit">9.뉴스 섹션:tdn이 안들어가요...</h2> -->
+        <div class="cont-box">
+          <div class="col-12 overflowhidden">
+            <div class="newstit">
+              <p class="tit">NEWS</p>
+              <p class="txt">탭코리아의 새로운 소식을 확인해보세요.</p>
+            </div>
+            <div class="newsbox">
+              <div class="newsback">
+                <a href="#"><img src="./01.자료수집/PJ1_images/news01.jpg" alt="뉴스01">
+                  <div class="cate">제품정보</div>
+                  <div class="ntxtpadding">
+                    <p class="tit">Magnet cushion</p>
+                    <p class="txt">  Magnet Cushion 내용기와 외용기 후가공을 다르게 하여 다양한 디자인을 표현할 수 있는 CMA type깔끔한 라운드 엣지가 돋보이는 쉐입의 CMB type</p>
+                    <div class="date">2024.02.20</div></a>
+                  </div>
+              </div>
+              <div class="newsback">
+                <a href="#"><img src="./01.자료수집/PJ1_images/news02.jpg" alt="뉴스02">
+                  <div class="cate">제품정보</div>
+                  <div class="ntxtpadding">
+                    <p class="tit">Magnet cushion</p>
+                    <p class="txt">  Magnet Cushion 내용기와 외용기 후가공을 다르게 하여 다양한 디자인을 표현할 수 있는 CMA type깔끔한 라운드 엣지가 돋보이는 쉐입의 CMB type</p>
+                    <div class="date">2024.02.20</div></a>
+                  </div>
+              </div>
+              <div class="newsback">
+                <a href="#"><img src="./01.자료수집/PJ1_images/news03.jpg" alt="뉴스03">
+                  <div class="cate">공지사항</div>
+                  <div class="ntxtpadding">
+                    <p class="tit">Magnet cushion</p>
+                    <p class="txt">  Magnet Cushion 내용기와 외용기 후가공을 다르게 하여 다양한 디자인을 표현할 수 있는 CMA type깔끔한 라운드 엣지가 돋보이는 쉐입의 CMB type</p>
+                    <div class="date">2024.02.20</div></a>
+                  </div>
+              </div>
+              <div class="newsback">
+                <a href="#"><img src="./01.자료수집/PJ1_images/news04.jpg" alt="뉴스04">
+                  <div class="cate">제품정보</div>
+                  <div class="ntxtpadding">
+                    <p class="tit">Magnet cushion</p>
+                    <p class="txt">  Magnet Cushion 내용기와 외용기 후가공을 다르게 하여 다양한 디자인을 표현할 수 있는 CMA type깔끔한 라운드 엣지가 돋보이는 쉐입의 CMB type</p>
+                    <div class="date">2024.02.20</div></a>
+                  </div>
+              </div>
+              <div class="newsback">
+                <a href="#"><img src="./01.자료수집/PJ1_images/news05.jpg" alt="뉴스05">
+                  <div class="cate">공지사항</div>
+                  <div class="ntxtpadding">
+                    <p class="tit">Magnet cushion</p>
+                    <p class="txt">  Magnet Cushion 내용기와 외용기 후가공을 다르게 하여 다양한 디자인을 표현할 수 있는 CMA type깔끔한 라운드 엣지가 돋보이는 쉐입의 CMB type</p>
+                    <div class="date">2024.02.20</div></a>
+                  </div>
+              </div>
+            </div>
+            <div class="dragpointer">
+              <p>◀drag▶</p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </div>
+    <!-- 10.쇼룸섹션 -->
+    <!-- <div id="showroom-sect">
+      <section class="showroom-sect inbox">
+        <h2 class="temp-tit">10.쇼룸섹션</h2>
+        <div class="cont-box">
+          <div class="col-12"></div>
+        </div>
+      </section>
+    </div> -->
+    <!-- 11.footer섹션 -->
+    <div id="footer-sect">
+      <section class="footer-sect inbox">
+        <!-- <h2 class="temp-tit">11.footer섹션</h2> -->
+        <div class="cont-box">
+          <div class="col-12">
+            <img src="./01.자료수집/PJ1_images/logo.svg" alt="로고">
+            <div class="infotxt">
+            <p>
+              주식회사 탭코리아
+            </p>
+            <p>
+              15600 경기 안산시 단원구 별망로 499 (원시동 738-5)
+            </p>
+            <p>
+              전화 031-495-2334~5 | 팩스 031-495-2338 | 이메일 sales@tapkorea.net | 사업자등록번호 134-86-48922 | ISO 9001/14001/45001/22716 인증 생산업체
+            </p>
+          </div>
+            <div class="infoco">
+              <p>© 2023 TAPKOREA ALL RIGHTS RESERVED</p>
+              <p>COPY OR REPRODUCTION OF THIS WORK IS STRICTLY PROHIBITED BY THE  COPYRIGHT LAW.</p>
+              <p>복사나 재창작은 저작권법에 의해 엄격히 금지됩니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

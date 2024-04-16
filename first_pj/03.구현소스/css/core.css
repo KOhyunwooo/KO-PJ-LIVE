@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+/* 도깨비 PJ : 공통 클래스 CSS - core.css */
+/* 공통 셋팅을 위한 클래스 + 웹폰트 */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap=Noto+Serif+KR&display=swap=Hahmlet:wght@100..900&display=swap=Song+Myung&display=swap=Noto+Sans+KR:wght@500&family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
+/* 
+    0. 메뉴 등 일반체
+    font-family: 'Noto Sans KR', sans-serif;
+    1. 캐릭터 설명 제목체
+    font-family: 'Gugi', cursive;
+    2. 캐릭터 설명 내용체
+    font-family: 'Single Day', cursive;
+    3. 캐릭터 설명 한자체
+    font-family: 'ZCOOL KuaiLe', cursive;
+    4. 전체 공통체(메뉴 등)
+    font-family: 'Nanum Gothic', sans-serif;
+    송명체
+    5.font-family: "Song Myung", serif;
+
+    6Hahmlet체( 메인에 쓰기
+     font-family: "Hahmlet", serif;
+
+     6.노토쉐리프
+     font-family: "Noto Serif KR", serif;
+     7.나눔명조
+     font-family: "Nanum Myeongjo", serif;
+     
+*/
+
+/********************* 공통 클래스 *********************/
+.desc {
+  font-size: 2.5em;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  
+  }
+  .tit {
+    font-size: 5.5em;
+    
+    font-family: "Noto Serif KR", serif;
+    font-weight: bold;
+    /* text-shadow: 2px 2px 4px #dbdbdb; */
+  }
+  .cont {
+    font-size: 1.8em;
+    word-break: break-all;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+    
+  }
+  .txt{
+    font-size: 1.8em;
+    font-family: 'Noto Sans KR', sans-serif;
+    /* font-size: bold; */
+    
+  }
+  .cate{
+    font-size: 1.7em;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+  }
+  
+
+
+
+
+
+
+html{
+    /* 전체 글자크기 */
+    font-size: 10px;
+    /* rem단위 계산편의를 위함 */
+    
+    
+}
+
+body{
+    /* 글자체 */
+    font-family: 'Nanum Gothic', sans-serif;
+   
+    
+}
+
+
+/* 임시표시 타이틀 */
+/* .temp-tit{
+    position: absolute;
+    color: #535353;
+    font-size: 2vw;
+} */
+
+
+
+
+/* 중앙 속박스 */
+.inbox{
+    /* 최대 가로크기 */
+   max-width: 1913px;
+    /* 블록박스 중앙정렬->마.영.오! */
+   margin: 0 auto;
+}
+
+
+
+
+/*************************** 스크롤바 디자인 클래스 ***************************/
+/* -webkit- 밴더사명(크롬,사파리) 접두어 */
+/* 클래스명 scbar */
+.scbar::-webkit-scrollbar{
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+    
+}
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color: #222;
+    border-radius: 5px;
+}
+/*************************** /스크롤바 디자인 클래스 ***************************/
+
+
+/* 오버플로우히든주는 클래스 */
+.overflowhidden{
+    overflow: hidden;
+}

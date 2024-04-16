@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* 글자등장1 CSS - show_letter.css */
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+/* 글자스테이지 */
+.mtxt {
+    position: absolute;
+    display: flex;
+    /* 랩핑박스 */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 가로크기 제한 */
+    width: 65.5vw;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+
+    /* 글자설정 */
+    font-size: 5vw;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-family: "Nanum Myeongjo", serif;
+    text-shadow: 3px 3px 6px #222;
+    
+}
+
+/* 글자개별박스 셋팅 */
+.mtxt span {
+    /* 트랜스폼 적용위해 */
+    display: block;
+}
+/* 글자등장 스타일1 */
+.style3 span{
+    
+    /* 투명도 0 */
+    opacity: 0;    
+    transition: 0.3s ease-in;
+}
+.style3.on span{
+    /* 현재위치로 부터 이동 */
+    /* 투명도 0 */
+    opacity: 1;    
+}
+
+/* 글자등장 스타일2 */
+.style2 span{
+    /* 현재위치로 부터 이동 */
+    transform: translate(0, 50%);
+    /* 투명도 0 */
+    opacity: 0;    
+    transition: 0.3s ease-in;
+}
+.style2.on span{
+    /* 현재위치로 부터 이동 */
+    /* 투명도 0 */
+    opacity: 1;    
+}
+
+
+/* 글자등장 스타일3 */
+/* .style3{
+    perspective: 100vh;
+}
+.style3 span{
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    opacity: 0;    
+    transition: 0.3s ease-in;
+}
+.style3.on span{
+    transform: rotateX(0deg);
+    opacity: 1;    
+} */

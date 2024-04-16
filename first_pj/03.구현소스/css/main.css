@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* 도깨비 PJ : 메인페이지 CSS - main.css */
+
+/* 리셋, 코아, 커먼 공통 외부css 합치기 */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+@import url(./grid_12_flex.css); /* 그리드12 불러오기 */
+@import url(./show_letter.css); /* 메인타이포그라피 불러오기 */
+@import url(./show_letter_jour.css);/* 저니섹션 타이포그라피 불러오기 */
+@import url(./scroll_special.css);/* 스페셜섹션 css불러오기 */
+body * {
+    /* 공사중 표시 */
+    /* outline: 1px dashed rgb(255, 0, 0); */
+    /* 임시 배경색, 배경색 전부 따로 줘야함 */
+
+    /* line-height: 1.6; */
+
+    /* font-weight: 400; */
+}
+
+.temp-tit{
+    position: absolute;
+    color: rgb(255, 0, 0);
+    font-size: 30px;
+    z-index: 999;
+    font-weight: bold;
+}
+
+
+/************************************************* 1.상단영역(메뉴) *************************************************/
+
+
+
+
+/************************************* 2.배너 섹션  *************************************/
+.ban-sect {
+    height: 858.89px;
+}
+
+
+/* 3.비쥬얼 섹션 */
+.visual-sect {
+    height: 777px;
+}
+/* 4.프로섹션 섹션 */
+.pro-sect {
+    height: 1058.89px;
+}
+/* 5.저니 섹션  */
+.journey-sect {
+    height: 1106.82px;
+}
+
+
+/* 8.파트너 섹션 */
+.partner-sect {
+    height: 772.92px;
+}
+
+/* 10.쇼룸섹션  */
+.showroom-sect {
+    height: 1169.79px;
+}
+/* 11.footer 섹션 */
+.footer-sect {
+    /* height: 881.19px; */
+}
