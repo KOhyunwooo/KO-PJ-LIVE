@@ -453,7 +453,7 @@ h1.logo a {
 
     transition: .5s ease-in-out;
 }
-.journey-sect.on {
+.journey-sect.on{
     background-color: #000000;
 }
 .jourcont {
@@ -467,7 +467,7 @@ h1.logo a {
   flex-wrap: wrap;
   top: 20%;
   width: 75%;
-  height: 70%;
+  height: 76vh;
   margin: 0 auto;
   background: url(../../01.자료수집/PJ1_images/journey01.jpg) no-repeat
   bottom/cover;
@@ -482,6 +482,7 @@ h1.logo a {
 .journeymain.on{
   /* clip-path:  polygon(100%,100%,100%,100%); */
   opacity: 1;
+  height: 86vh;
 
 }
 /* 저니섹션 아랫쪽 텍스트 색깔*/
@@ -554,7 +555,7 @@ h1.logo a {
 }
 .txtspecial{
   position: sticky;
-  top: 50px;
+  top: 3.5vw;
   z-index: 999;
   padding-left: 15%;
 }
